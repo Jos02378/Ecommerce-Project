@@ -1,8 +1,9 @@
 package com.joseph.ecommerce.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -11,6 +12,8 @@ import java.util.Date;
 @Table(name = "product")
 @Data
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String sku;
     private String name;
@@ -19,6 +22,11 @@ public class Product {
     private String imageUrl;
     private boolean active;
     private int unitsInStock;
+    @CreationTimestamp
     private Date dateCreated;
+    @UpdateTimestamp
     private Date lastUpdated;
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private ProductCategory category;
 }
