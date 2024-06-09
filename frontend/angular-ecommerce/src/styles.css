@@ -117,7 +117,7 @@ a:hover {
 .page-wrapper {
   overflow: hidden;
   background: #e5e5e5;
-  padding-bottom: 8vh;
+  /* padding-bottom: 8vh; */
 }
 
 .page-container {
@@ -366,9 +366,9 @@ input.au-input.au-input-xl {
 
 .menu-sidebar-content {
   position: relative;
-  height: -webkit-calc(100vh - 75px);
-  height: -moz-calc(100vh - 75px);
-  height: calc(100vh - 75px);
+  height: -webkit-calc(100vh - 75px - 41px);
+  height: -moz-calc(100vh - 75px - 41px);
+  height: calc(100vh - 75px - 41px);
 }
 
 .navbar-sidebar {
